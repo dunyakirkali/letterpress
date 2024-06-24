@@ -1,0 +1,19 @@
+Name Lastname <name.lastname@foo.bar>
+:reproducible:
+:listing-caption: Listing
+:source-highlighter: rouge
+:toc:
+:toclevels: 2
+:sectnums:
+:doctype: book
+:partnums:
+:icons: font
+:front-image: backgrounds/cover.png
+:imagesdir: ../figures
+
+include::front_matter.adoc[]
+
+include::body.adoc[]
+
+include::back_matter.adoc[]
+
