@@ -1,6 +1,6 @@
 # letterpress
 
-![gutenberg](figures/gutenberg.jpg "Gutenberg")
+<img src="figures/gutenberg.jpg" width=530>
 
 Gutenberg the 💩 out of it!
 
