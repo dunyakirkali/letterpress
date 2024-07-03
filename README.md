@@ -13,3 +13,17 @@ Gutenberg the 💩 out of it!
 
 - Content
 - Images
+
+## Commands
+
+### Generate
+
+```bash
+make
+```
+
+### Count
+
+```bash
+make count
+```
