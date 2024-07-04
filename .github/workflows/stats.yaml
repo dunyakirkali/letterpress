@@ -1,1 +1,16 @@
-dunya kirkakl
+name: Statistics
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  words:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Count words
+        run: make count
