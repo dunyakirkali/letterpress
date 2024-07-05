@@ -1,3 +1,10 @@
 {
-  "image": "uwebarthel/asciidoctor:1.72"
+  "image": "uwebarthel/asciidoctor:1.72",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "asciidoctor.asciidoctor-vscode"
+      ]
+    }
+  }
 }
