@@ -2,11 +2,11 @@
 
 === Introduction
 
-Fractals are complex patterns that are self-similar across different scales. They are fascinating both in their mathematical properties and their visual appeal. In this chapter, we will explore how to program fractals using Elixir and Go, focusing on some of the most famous fractal patterns such as the Mandelbrot set and the Sierpinski triangle.
+((Fractals)) are complex patterns that are self-similar across different scales. They are fascinating both in their mathematical properties and their visual appeal. In this chapter, we will explore how to program fractals using Elixir and Go, focusing on some of the most famous fractal patterns such as the Mandelbrot set and the Sierpinski triangle.
 
 === The Mandelbrot Set
 
-The Mandelbrot set is a set of complex numbers that produces a distinctive and famous fractal shape. The set is defined by iterating the function:
+The ((Mandelbrot)) set is a set of complex numbers that produces a distinctive and famous fractal shape. The set is defined by iterating the function:
 
 [stem]
 ++++
@@ -15,7 +15,7 @@ z_{n+1} = z_n^2 + c
 
 ==== Plotting the Mandelbrot Set in Elixir
 
-Let's start with a basic Elixir program to plot the Mandelbrot set.
+Let's start with a basic ((Elixir)) program to plot the Mandelbrot set.
 
 [source,elixir]
 ----
@@ -46,7 +46,7 @@ plot = Mandelbrot.mandelbrot_set(-2.0, 1.0, -1.5, 1.5, 800, 800, 256)
 
 ==== Plotting the Mandelbrot Set in Go
 
-Here's a Go program to plot the Mandelbrot set.
+Here's a ((Go)) program to plot the Mandelbrot set.
 
 [source,go]
 ----

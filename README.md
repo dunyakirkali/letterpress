@@ -4,6 +4,12 @@ Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
 
+Letterpress is a project aimed at simplifying the self-publishing process for books. It provides a ready-to-use template based on AsciiDoctor, catering to authors who need robust support for diagramming, coding examples, and mathematical formulas.
+
+## Contributing
+
+Contributions to Letterpress are welcome! If you have suggestions, improvements, or bug fixes, please fork the repository and submit a pull request.
+
 ## Tools
 
 This Project makes use of the following tools:
@@ -36,13 +42,13 @@ make
 If you just need to generate the PDF:
 
 ```bash
-make output/your_book_slug.pdf
+make output/book.pdf
 ```
 
 If you just need to generate the EPUB:
 
 ```bash
-make output/your_book_slug.epub
+make output/book.epub
 ```
 
 ### Count

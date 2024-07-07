@@ -12,7 +12,7 @@ image::mountains.jpg[Mountains, width=600, align=center]
 
 ==== Mountain Formation
 
-Mountains are formed through various geological processes, including tectonic activity and volcanic eruptions. The Himalayas, for instance, were formed by the collision of the Indian and Eurasian tectonic plates.
+Mountains are formed through various geological processes, including ((tectonic)) activity and volcanic eruptions. The Himalayas, for instance, were formed by the collision of the Indian and Eurasian tectonic plates.
 
 . Types of Mountains
 * Fold Mountains
@@ -29,7 +29,7 @@ image::beach.jpg[Beach, width=600, align=center]
 
 ==== Marine Life
 
-Beaches are not just about the sand and the sea; they are also home to a diverse array of marine life. From colorful corals to vibrant fish, the underwater world is a sight to behold.
+Beaches are not just about the sand and the sea; they are also home to a diverse array of marine life. From colorful ((corals)) to vibrant fish, the underwater world is a sight to behold.
 
 [quote, Marine Biologist, "The Beauty of Marine Life"]
 ____
@@ -44,7 +44,7 @@ image::forest.jpg[Forest, width=600, align=center]
 
 ==== Biodiversity
 
-Forests are incredibly biodiverse. The Amazon Rainforest, for example, is home to over 400 billion individual trees representing more than 16,000 species.
+Forests are incredibly biodiverse. The ((Amazon)) Rainforest, for example, is home to over 400 billion individual trees representing more than 16,000 species.
 
 * Fun Fact: The Amazon Rainforest produces 20% of the world's oxygen.
 

@@ -7,7 +7,7 @@ The ocean covers more than 70% of the Earth's surface and is home to a vast arra
 [sidebar]
 **** 
 Did you know?
-The Mariana Trench is the deepest part of the world's oceans, reaching a depth of about 36,000 feet.
+The ((Mariana Trench)) is the deepest part of the world's oceans, reaching a depth of about 36,000 feet.
 ****
 
 === The Ocean Zones
@@ -45,7 +45,7 @@ Many deep-sea creatures have developed bioluminescence to survive in the dark en
 
 ==== The Giant Squid
 
-The giant squid is a mysterious deep-sea creature that has fascinated scientists for centuries.
+The giant ((squid)) is a mysterious deep-sea creature that has fascinated scientists for centuries.
 
 image::giant_squid.jpg[Giant Squid, width=500, align=center]
 
@@ -69,7 +69,7 @@ image::coral_reef.jpg[Coral Reef, width=500, align=center]
 * Provide protection for coastlines
 * Support commercial and recreational fisheries
 
-footnote:[Coral reefs cover less than 1% of the ocean floor but support 25% of all marine life.]
+footnote:[((Coral)) reefs cover less than 1% of the ocean floor but support 25% of all marine life.]
 
 === The Impact of Human Activity
 
@@ -93,7 +93,7 @@ image::plastic_pollution.jpg[Plastic Pollution, width=500, align=center]
 
 ==== Overfishing
 
-Overfishing has led to the depletion of many fish species, disrupting marine ecosystems and food chains.
+((Overfishing)) has led to the depletion of many fish species, disrupting marine ecosystems and food chains.
 
 . Solutions to Overfishing
 * Implementing catch limits

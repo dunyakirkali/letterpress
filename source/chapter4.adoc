@@ -6,7 +6,7 @@ Mathematics is the language of nature. From the intricate patterns of seashells 
 
 === The Fibonacci Sequence
 
-The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. This sequence appears in various natural phenomena.
+The ((Fibonacci)) sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. This sequence appears in various natural phenomena.
 
 [stem]
 ++++
@@ -24,7 +24,7 @@ image::fibonacci_spiral.jpg[Fibonacci Spiral, width=500, align=center]
 
 === The Golden Ratio
 
-The golden ratio, often denoted by the Greek letter φ (phi), is an irrational number approximately equal to 1.6180339887. It appears in various aspects of art, architecture, and nature.
+The golden ratio, often denoted by the ((Greek)) letter φ (phi), is an irrational number approximately equal to 1.6180339887. It appears in various aspects of art, architecture, and nature.
 
 [stem]
 ++++
@@ -33,7 +33,7 @@ The golden ratio, often denoted by the Greek letter φ (phi), is an irrational n
 
 ==== Golden Ratio in Nature
 
-The golden ratio can be observed in the proportions of the human body, the arrangement of leaves, and the patterns of flower petals.
+The ((golden)) ratio can be observed in the proportions of the human body, the arrangement of leaves, and the patterns of flower petals.
 
 image::golden_ratio.jpg[Golden Ratio, width=500, align=center]
 
@@ -77,7 +77,7 @@ image::fractal_broccoli.jpg[Fractal Broccoli, width=500, align=center]
 
 === Calculus in Nature
 
-Calculus, the mathematical study of continuous change, helps describe various natural phenomena, such as the motion of planets, the growth of populations, and the spread of diseases.
+((Calculus)), the mathematical study of continuous change, helps describe various natural phenomena, such as the motion of planets, the growth of populations, and the spread of diseases.
 
 ==== Motion of Planets
 

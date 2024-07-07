@@ -6,7 +6,7 @@ Ecosystems are complex networks of organisms and their environment. This chapter
 
 === Terrestrial Ecosystems
 
-Terrestrial ecosystems are found on land and include forests, grasslands, deserts, and tundras.
+((Terrestrial)) ecosystems are found on land and include forests, grasslands, deserts, and tundras.
 
 [plantuml, forest_diagram, png, width=600, align=center]
 ----
@@ -42,7 +42,7 @@ image::forest_2.jpg[Forest, width=500, align=center]
 
 === Aquatic Ecosystems
 
-Aquatic ecosystems are found in water environments and include freshwater and marine ecosystems.
+((Aquatic)) ecosystems are found in water environments and include freshwater and marine ecosystems.
 
 [plantuml, marine_ecosystem, png, width=600, align=center]
 ----
@@ -64,7 +64,7 @@ package "Marine Ecosystem" {
 
 ==== Marine Ecosystem
 
-Marine ecosystems are the largest of Earth's aquatic ecosystems and are distinguished by their high salt content.
+((Marine ecosystems)) are the largest of Earth's aquatic ecosystems and are distinguished by their high salt content.
 
 image::marine.jpg[Marine, width=500, align=center]
 
