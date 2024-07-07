@@ -1,5 +1,5 @@
 [preface]
-= Preface
+== Preface
 
 When I first embarked on the journey of writing this book, I could not have foreseen the challenges and triumphs that lay ahead. What began as a simple idea evolved into a deeply personal exploration of themes that have long fascinated me: the complexities of human relationships, the resilience of the human spirit, and the intricate tapestry of our shared experiences.
 

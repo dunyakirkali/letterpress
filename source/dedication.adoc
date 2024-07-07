@@ -1,5 +1,5 @@
 [dedication]
-= Dedication
+== Dedication
 
 To my parents, for their unwavering support and endless encouragement.
 

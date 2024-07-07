@@ -1,7 +1,7 @@
 [part]
-= About Author
+== About Author
 
-**Alexandra Thompson** is an acclaimed novelist and essayist, known for her vivid storytelling and complex characters. Born and raised in Portland, Oregon, Alexandra developed a love for literature at an early age, influenced by the rich cultural heritage of the Pacific Northwest. She holds a Bachelor's degree in English Literature from the University of Washington and a Master of Fine Arts in Creative Writing from the Iowa Writers' Workshop.
+**Alexandra Thompson** is an acclaimed novelist and essayist, known for her vivid storytelling and complex characters. Born and raised in Portland, Oregon, Alexandra developed a love for literature at an early age, influenced by the rich cultural heritage of the Pacific Northwest. She holds a Bachelor's degree in English Literature from the ((University of Washington)) and a Master of Fine Arts in Creative Writing from the ((Iowa)) Writers' Workshop.
 
 Her debut novel, *Whispers of the Wind*, won the prestigious Man Booker Prize and has been translated into over fifteen languages. Alexandra's works often explore themes of identity, family dynamics, and the human connection to nature. Her prose is celebrated for its lyrical beauty and emotional depth.
 
