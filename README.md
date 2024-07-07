@@ -18,12 +18,34 @@ Gutenberg the 💩 out of it!
 
 ### Generate
 
+In order to generate the PDF and the EPUB versions of the book you can just run:
+
 ```bash
 make
+```
+
+If you just need to generate the PDF:
+
+```bash
+make output/your_book_slug.pdf
+```
+
+If you just need to generate the EPUB:
+
+```bash
+make output/your_book_slug.epub
 ```
 
 ### Count
 
 ```bash
 make count
+```
+
+### Clean
+
+In order to remove the generated files you can run:
+
+```bash
+make clean
 ```
