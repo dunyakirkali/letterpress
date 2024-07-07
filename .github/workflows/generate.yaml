@@ -1,0 +1,35 @@
+name: Generate
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: uwebarthel/asciidoctor
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate PDF
+        run: make output/book.pdf
+      - name: Archive PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: output/book.pdf
+  epub:
+    runs-on: ubuntu-latest
+    container:
+      image: uwebarthel/asciidoctor
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate EPUB
+        run: make output/book.epub
+      - name: Archive EPUB
+        uses: actions/upload-artifact@v4
+        with:
+          name: epub
+          path: output/book.epub
+
