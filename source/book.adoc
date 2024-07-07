@@ -1,4 +1,4 @@
-= Book Title
+= Title
 Name Lastname <name.lastname@foo.bar>
 :reproducible:
 :listing-caption: Listing
