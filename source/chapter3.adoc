@@ -1,102 +1,126 @@
-== Chapter 3
+== Chapter 3: Exploring Ecosystems
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et pharetra purus.
-Nullam laoreet consequat maximus. Etiam in ipsum nec est iaculis fringilla vel
-nec leo. Mauris a felis ut justo aliquet ultricies vitae quis ligula. Maecenas
-et mauris mollis, egestas mauris dapibus, pulvinar lacus. Donec ut libero
-ligula. Integer efficitur turpis et efficitur viverra. Etiam vestibulum, ipsum
-eget venenatis commodo, mauris purus fermentum lorem, a convallis nunc leo id
-ipsum.
+=== Introduction
 
-=== Part 1
+Ecosystems are complex networks of organisms and their environment. This chapter explores different types of ecosystems, their structures, and the interactions within them.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum quam
-nec metus consequat, sit amet consectetur justo posuere. Proin rutrum nibh
-nisl, ut condimentum magna hendrerit non. Vestibulum ornare velit mauris, a
-auctor magna porttitor ut. Nullam turpis mi, pharetra nec tempor eget, feugiat
-id augue. Sed turpis sem, vehicula quis mollis porttitor, feugiat non orci.
-Pellentesque mattis tortor et hendrerit dapibus. Nulla scelerisque dui id nunc
-pellentesque, a iaculis dui commodo. Ut elit libero, porta sed mattis a,
-venenatis eu turpis. Ut ultrices ipsum ut dolor suscipit imperdiet. Duis vitae
-mi arcu.
+=== Terrestrial Ecosystems
 
-Aenean sed dui risus. Integer vulputate, augue sed mattis consectetur, elit
-erat ornare lacus, quis posuere ex massa eget mi. Curabitur dictum libero nunc,
-sed ullamcorper orci bibendum et. Sed nec gravida sapien. Cras eget efficitur
-tortor, vitae mollis nunc. Maecenas imperdiet iaculis varius. Morbi non nibh at
-velit congue sodales. Ut semper tincidunt tristique.
+Terrestrial ecosystems are found on land and include forests, grasslands, deserts, and tundras.
 
-=== Part 2
+[plantuml, forest_diagram, png, width=600, align=center]
+----
+@startuml
+!define RECTANGLE class
+package "Forest Ecosystem" {
+  RECTANGLE "Trees" as Trees
+  RECTANGLE "Shrubs" as Shrubs
+  RECTANGLE "Herbivores" as Herbivores
+  RECTANGLE "Carnivores" as Carnivores
+  RECTANGLE "Decomposers" as Decomposers
 
-Fusce sollicitudin mauris at ligula tristique egestas. Phasellus eget diam
-mauris. Pellentesque congue eros nec venenatis rhoncus. Fusce id accumsan
-tellus. Suspendisse non luctus enim, ac tincidunt sem. Aenean sit amet rhoncus
-nisi. Pellentesque a scelerisque dolor. Praesent tempor in arcu nec porta. Sed
-lorem dui, congue eget vestibulum sed, efficitur pulvinar magna. Quisque tempor
-posuere bibendum. Nullam luctus lobortis sem et lacinia. Quisque eros mi,
-molestie id elit nec, imperdiet egestas ligula. Curabitur lobortis augue a odio
-tincidunt, id gravida tellus rutrum. Vestibulum nec hendrerit orci, nec
-fermentum ante.
+  Trees --> Shrubs
+  Shrubs --> Herbivores
+  Herbivores --> Carnivores
+  Carnivores --> Decomposers
+}
+@enduml
+----
 
-Nullam placerat sed metus sed interdum. Vestibulum ligula tellus, rhoncus eu
-diam ullamcorper, finibus imperdiet dui. Proin fringilla magna quis sapien
-scelerisque, id mattis sapien accumsan. Maecenas justo ligula, varius id ligula
-a, ultrices accumsan mauris. Etiam ut odio lacus. Nam sed ex libero. Morbi enim
-ex, blandit tempus pellentesque eu, posuere non velit. Proin interdum odio eget
-arcu blandit faucibus.
+==== Forest Ecosystem
 
-=== Part 3
+Forests are characterized by a high density of trees. They are vital for maintaining biodiversity and regulating the global climate.
 
-Nam neque ex, euismod et viverra id, luctus at tellus. Suspendisse dapibus
-euismod justo ac posuere. Mauris eget eros arcu. Mauris sit amet feugiat
-lectus, eget efficitur sem. Aenean id erat eget metus tincidunt condimentum.
-Praesent mollis maximus tortor tempor placerat. Vivamus sed lorem eu libero
-tempus finibus ac vitae massa.
+image::forest_2.jpg[Forest, width=500, align=center]
 
-Etiam pretium aliquet tellus, vel facilisis erat sagittis quis. Sed cursus
-tempus nibh a bibendum. Suspendisse potenti. Cras mattis aliquet est, et rutrum
-velit cursus a. Nunc quis nibh sed massa volutpat efficitur non et ante. Ut
-tempor sollicitudin massa eget luctus. Sed scelerisque magna dolor, nec viverra
-justo consequat vel. Vestibulum condimentum neque in eros eleifend, quis
-hendrerit ligula hendrerit. Cras sed porta dui. Vestibulum eu diam vitae lorem
-convallis imperdiet. Quisque gravida a turpis vel porta. Nullam cursus, nibh
-eget finibus finibus, elit ex volutpat ligula, eget tempor mi metus eu est.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus
-venenatis erat, id malesuada massa fringilla vel. Nam justo dolor, placerat
-quis lectus pulvinar, imperdiet iaculis tellus. Vestibulum ut magna risus.
+. Components of a Forest Ecosystem
+* Trees
+* Shrubs
+* Herbivores
+* Carnivores
+* Decomposers
 
-=== Part 4
+=== Aquatic Ecosystems
 
-Curabitur in luctus enim. Aliquam ullamcorper vulputate nunc, quis aliquam ex
-semper non. Ut placerat leo vitae tristique lobortis. Morbi feugiat condimentum
-sapien et feugiat. Nam commodo tellus id felis placerat consectetur. Duis eu
-felis interdum, fermentum turpis sed, accumsan turpis. Ut scelerisque ornare
-diam quis mattis. Integer lacinia quam nec lacinia imperdiet. Morbi congue,
-massa vitae euismod dapibus, augue odio tincidunt justo, eu volutpat erat justo
-a enim. Integer dictum erat non felis interdum, eu elementum mauris eleifend.
-Curabitur diam mauris, faucibus ut consectetur sed, bibendum vitae dui. Duis
-quis euismod eros.
+Aquatic ecosystems are found in water environments and include freshwater and marine ecosystems.
 
-=== Part 4.1
+[plantuml, marine_ecosystem, png, width=600, align=center]
+----
+@startuml
+package "Marine Ecosystem" {
+  node "Phytoplankton" as Phytoplankton
+  node "Zooplankton" as Zooplankton
+  node "Small Fish" as SmallFish
+  node "Large Fish" as LargeFish
+  node "Sharks" as Sharks
 
-Sed in eros aliquam, pellentesque nunc vitae, tempus tellus. Sed tincidunt ex
-leo, in pulvinar purus rutrum a. Duis dictum, lacus ut interdum tincidunt,
-purus tortor placerat urna, non tristique justo ligula interdum neque. Integer
-in quam sit amet mi fringilla molestie sit amet id nisl. Nulla facilisi. Mauris
-nulla felis, rhoncus a dapibus eget, pellentesque sit amet metus. Sed finibus
-eu diam at tempor. Nam porttitor tincidunt est gravida tempor. Donec eleifend
-sapien sem, sit amet pellentesque lorem viverra id. Morbi ac tortor semper,
-mollis felis non, accumsan nibh. Duis lectus ex, bibendum eget nibh ac, laoreet
-aliquam metus. Proin dapibus nunc vitae eros malesuada, eu suscipit sem
-bibendum. Phasellus luctus aliquet eros quis posuere. Nullam lectus leo, mattis
-eu arcu eget, interdum finibus ipsum. Fusce imperdiet mauris quis arcu pulvinar
-gravida.
+  Phytoplankton -> Zooplankton
+  Zooplankton -> SmallFish
+  SmallFish -> LargeFish
+  LargeFish -> Sharks
+}
+@enduml
+----
 
-=== Part 4.2
+==== Marine Ecosystem
 
-Vestibulum sed sapien vel dui aliquet mollis ac eu nisl. Sed nec ante vel nibh
-faucibus accumsan. Phasellus tincidunt lorem sit amet dolor egestas molestie.
-Pellentesque maximus porta lorem vel ultrices. Pellentesque habitant morbi
-tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et
-molestie dui. Maecenas at mi mollis lectus ultrices blandit vel sed arcu. Donec
-eget sapien mollis mauris pharetra vulputate.
+Marine ecosystems are the largest of Earth's aquatic ecosystems and are distinguished by their high salt content.
+
+image::marine.jpg[Marine, width=500, align=center]
+
+. Components of a Marine Ecosystem
+* Phytoplankton
+* Zooplankton
+* Small Fish
+* Large Fish
+* Sharks
+
+=== Energy Flow in Ecosystems
+
+Energy flows through ecosystems via food chains and food webs, starting with producers and moving up to apex predators.
+
+[mermaid, energy_flow, png, width=600, align=center]
+----
+graph TD
+    A[Sun] --> B[Plants]
+    B --> C[Herbivores]
+    C --> D[Carnivores]
+    D --> E[Decomposers]
+----
+
+=== Nutrient Cycling
+
+Nutrients cycle through ecosystems, ensuring that essential elements are reused and recycled.
+
+[mermaid, nutrient_cycle, png, width=600, align=center]
+----
+graph LR
+    A[Plants] --> B[Animals]
+    B --> C[Decomposers]
+    C --> D[Soil]
+    D --> A
+----
+
+=== Conclusion
+
+Understanding ecosystems is crucial for environmental conservation and management. By studying the interactions within ecosystems, we can better protect and sustain our natural world.
+
+=== Further Reading
+
+For more information on ecosystems and their importance, check out the following resources:
+
+* https://www.worldwildlife.org[World Wildlife Fund]
+* https://www.nature.org[The Nature Conservancy]
+* https://www.nationalgeographic.com[National Geographic]
+
+=== References
+
+1. Odum, E. P. (1971). _Fundamentals of Ecology_. Philadelphia: W.B. Saunders Company.
+2. Chapin, F. S., Matson, P. A., & Mooney, H. A. (2002). _Principles of Terrestrial Ecosystem Ecology_. New York: Springer.
+
+=== Appendix
+
+==== Image and Diagram Credits
+
+* Forest: Photo by Steven Kamenar on Unsplash
+* Marine: Photo by Polina Kuzovkova on Unsplash
