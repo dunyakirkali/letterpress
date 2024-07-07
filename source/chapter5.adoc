@@ -2,7 +2,7 @@
 
 === Introduction
 
-Fractals are complex patterns that are self-similar across different scales. They are fascinating both in their mathematical properties and their visual appeal. In this chapter, we will explore how to program fractals using Elixir, BQN, and Haskell, focusing on some of the most famous fractal patterns such as the Mandelbrot set and the Sierpinski triangle.
+Fractals are complex patterns that are self-similar across different scales. They are fascinating both in their mathematical properties and their visual appeal. In this chapter, we will explore how to program fractals using Elixir and Go, focusing on some of the most famous fractal patterns such as the Mandelbrot set and the Sierpinski triangle.
 
 === The Mandelbrot Set
 
@@ -40,62 +40,62 @@ defmodule Mandelbrot do
   end
 end
 
-{:ok, _} = :application.ensure_all_started(:gnuplot)
-
 plot = Mandelbrot.mandelbrot_set(-2.0, 1.0, -1.5, 1.5, 800, 800, 256)
 :Gnuplot.plot(plot)
 ----
 
-==== Plotting the Mandelbrot Set in BQN
+==== Plotting the Mandelbrot Set in Go
 
-Here's a BQN program to plot the Mandelbrot set.
+Here's a Go program to plot the Mandelbrot set.
 
-[source,bqn]
+[source,go]
 ----
-mandelbrot ← {
-  z ← 0
-  for n ≤ ⍟ do
-    if ∨/2≤´|z then n else
-      z +← z×z + ⍟
-    end
-  end
-  n
+package main
+
+import (
+	"image"
+	"image/color"
+	"image/png"
+	"math/cmplx"
+	"os"
+)
+
+func mandelbrot(c complex128, maxIter int) int {
+	z := complex(0, 0)
+	for n := 0; n < maxIter; n++ {
+		z = z*z + c
+		if cmplx.Abs(z) > 2 {
+			return n
+		}
+	}
+	return maxIter
 }
 
-mandelbrotSet ← {
-  r ← (⍟1+⌊○)∧!⌊○1,1⊸−⍟
-  ⌽⊏ { ⊏⍟(⍟1×⍟1)⊣mandelbrot¨r¨r}¨⊸∾¨⊸∾
+func mandelbrotSet(xmin, xmax, ymin, ymax float64, width, height, maxIter int) *image.Gray {
+	img := image.NewGray(image.Rect(0, 0, width, height))
+	for py := 0; py < height; py++ {
+		for px := 0; px < width; px++ {
+			x := float64(px)/float64(width)*(xmax-xmin) + xmin
+			y := float64(py)/float64(height)*(ymax-ymin) + ymin
+			c := complex(x, y)
+			m := mandelbrot(c, maxIter)
+			img.SetGray(px, py, color.Gray{255 - uint8(m)})
+		}
+	}
+	return img
 }
 
-xmin xmax ymin ymax width height max_iter ← ⊏-2 1 ¯1.5 1.5 800 800 256
-plot ← mandelbrotSet xmin xmax ymin ymax width height max_iter
-plot
-----
+func main() {
+	xmin, xmax, ymin, ymax := -2.0, 1.0, -1.5, 1.5
+	width, height := 800, 800
+	maxIter := 256
 
-==== Plotting the Mandelbrot Set in Haskell
+	img := mandelbrotSet(xmin, xmax, ymin, ymax, width, height, maxIter)
 
-Here's a Haskell program to plot the Mandelbrot set.
-
-[source,haskell]
-----
-import Data.Complex
-import Codec.Picture
-
-mandelbrot :: Complex Double -> Int -> Int
-mandelbrot c maxIter = length . takeWhile ((<= 2) . magnitude) . take maxIter $ iterate (\z -> z*z + c) 0
-
-mandelbrotSet :: Double -> Double -> Double -> Double -> Int -> Int -> Int -> Image Pixel8
-mandelbrotSet xmin xmax ymin ymax width height maxIter = generateImage pixelRenderer width height
-  where
-    pixelRenderer x y = let
-      real = xmin + (xmax - xmin) * fromIntegral x / fromIntegral width
-      imag = ymin + (ymax - ymin) * fromIntegral y / fromIntegral height
-      c = real :+ imag
-      iter = mandelbrot c maxIter
-      in fromIntegral (255 * iter `div` maxIter)
-
-main :: IO ()
-main = savePngImage "mandelbrot.png" (ImageY8 $ mandelbrotSet (-2.0) 1.0 (-1.5) 1.5 800 800 256)
+	file, _ := os.Create("mandelbrot.png")
+	defer file.Close()
+	png.Encode(file, img)
+}
 ----
 
 === The Sierpinski Triangle
@@ -126,128 +126,65 @@ Sierpinski.draw_triangle(0, 0, 800, 5, canvas)
 :image.create(:png, canvas)
 ----
 
-==== Plotting the Sierpinski Triangle in BQN
+==== Plotting the Sierpinski Triangle in Go
 
-Here is a BQN program to plot the Sierpinski triangle using recursion.
+Here is a Go program to plot the Sierpinski triangle using recursion.
 
-[source,bqn]
+[source,go]
 ----
-sierpinski ← {
-  size depth canvas ← ⍟
-  if depth = 0 then canvas
-  else
-    sierpinski size/2 depth-1 canvas ∨ (size/2) size
-    sierpinski size/2 depth-1 canvas ⊹⌽(size/2) size
-    sierpinski size/2 depth-1 canvas ⊹⌽(size/4) (size*√3/4)
-  end
+package main
+
+import (
+	"image"
+	"image/color"
+	"image/png"
+	"os"
+)
+
+func drawTriangle(img *image.Gray, x, y, size, depth int) {
+	if depth == 0 {
+		drawFilledPolygon(img, [][]int{{x, y}, {x + size / 2, y + int(float64(size) * 0.866)}, {x + size, y}}, 0)
+	} else {
+		drawTriangle(img, x, y, size / 2, depth - 1)
+		drawTriangle(img, x + size / 2, y, size / 2, depth - 1)
+		drawTriangle(img, x + size / 4, y + int(float64(size) * 0.866 / 2), size / 2, depth - 1)
+	}
 }
 
-sierpinski 800 5 []
-----
-
-==== Plotting the Sierpinski Triangle in Haskell
-
-Here is a Haskell program to plot the Sierpinski triangle using recursion.
-
-[source,haskell]
-----
-import Codec.Picture
-
-drawTriangle :: Int -> Int -> Int -> Int -> Image Pixel8 -> Image Pixel8
-drawTriangle x y size depth img
-  | depth == 0 = drawFilledPolygon img [(x, y), (x + size `div` 2, y + round (fromIntegral size * sqrt 3 / 2)), (x + size, y)] 0
-  | otherwise = drawTriangle x y (size `div` 2) (depth - 1) .
-                drawTriangle (x + size `div` 2) y (size `div` 2) (depth - 1) .
-                drawTriangle (x + size `div` 4) (y + round (fromIntegral size * sqrt 3 / 4)) (size `div` 2) (depth - 1) $ img
-
-main :: IO ()
-main = savePngImage "sierpinski.png" (ImageY8 $ drawTriangle 0 0 800 5 (generateImage (\_ _ -> 255) 800 800))
-----
-
-=== Julia Sets
-
-Julia sets are another type of fractal, closely related to the Mandelbrot set. They are generated using a similar iterative function but with a fixed complex parameter.
-
-==== Plotting a Julia Set in Elixir
-
-Here's an Elixir program to plot a Julia set.
-
-[source,elixir]
-----
-defmodule Julia do
-  def julia(c, z, max_iter) do
-    iterate(c, z, 0, max_iter)
-  end
-
-  defp iterate(_c, _z, n, max_iter) when n >= max_iter, do: n
-  defp iterate(c, z, n, max_iter) when abs(z) > 2, do: n
-  defp iterate(c, z, n, max_iter) do
-    iterate(c, z*z + c, n + 1, max_iter)
-  end
-
-  def julia_set(c, xmin, xmax, ymin, ymax, width, height, max_iter) do
-    for x <- 0..(width-1), y <- 0..(height-1) do
-      r = xmin + (xmax - xmin) * x / width
-      i = ymin + (ymax - ymin) * y / height
-      z = Complex.new(r, i)
-      {x, y, julia(c, z, max_iter)}
-    end
-  end
-end
-
-c = Complex.new(-0.7, 0.27015)
-plot = Julia.julia_set(c, -1.5, 1.5, -1.5, 1.5, 800, 800, 256)
-:Gnuplot.plot(plot)
-----
-
-==== Plotting a Julia Set in BQN
-
-Here's a BQN program to plot a Julia set.
-
-[source,bqn]
-----
-julia ← { z c max_iter ← ⍟
-  iterate ← { z +← z×z + c}
-  for n ≤ max_iter do
-    if ∨/2≤´|z then n else iterate z
-  end
+func drawFilledPolygon(img *image.Gray, points [][]int, value uint8) {
+	for i := 0; i < len(points); i++ {
+		x0, y0 := points[i][0], points[i][1]
+		x1, y1 := points[(i + 1) % len(points)][0], points[(i + 1) % len(points)][1]
+		drawLine(img, x0, y0, x1, y1, value)
+	}
 }
 
-juliaSet ← { c xmin xmax ymin ymax width height max_iter ← ⍟
-  r1 ← (⍟1+⌊○)∧!⌊○1,1⊸−⍟
-  ⌽⊏ { ⊏⍟(⍟1×⍟1)⊣julia¨r1¨r1¨c¨max_iter}¨⊸∾¨⊸∾
+func drawLine(img *image.Gray, x0, y0, x1, y1 int, value uint8) {
+	dx := x1 - x0
+	dy := y1 - y0
+	steps := max(abs(dx), abs(dy))
+
+	if steps == 0 {
+		img.SetGray(x0, y0, color.Gray{value})
+		return
+	}
+
+	for i := 0; i <= steps; i++ {
+		x := x0 + i * dx / steps
+		y := y0 + i * dy / steps
+		img.SetGray(x, y, color.Gray{value})
+	}
 }
 
-c = 0.27015J¯0.7
-xmin xmax ymin ymax width height max_iter ← ⊏-1.5 1.5 ¯1.5 1.5 800 800 256
-plot ← juliaSet c xmin xmax ymin ymax width height max_iter
-plot
-----
+func main() {
+	width, height := 800, 800
+	img := image.NewGray(image.Rect(0, 0, width, height))
+	drawTriangle(img, 0, 0, width, 5)
 
-==== Plotting a Julia Set in Haskell
-
-Here's a Haskell program to plot a Julia set.
-
-[source,haskell]
-----
-import Data.Complex
-import Codec.Picture
-
-julia :: Complex Double -> Complex Double -> Int -> Int
-julia c z0 maxIter = length . takeWhile ((<= 2) . magnitude) . take maxIter $ iterate (\z -> z*z + c) z0
-
-juliaSet :: Complex Double -> Double -> Double -> Double -> Double -> Int -> Int -> Int -> Image Pixel8
-juliaSet c xmin xmax ymin ymax width height maxIter = generateImage pixelRenderer width height
-  where
-    pixelRenderer x y = let
-      real = xmin + (xmax - xmin) * fromIntegral x / fromIntegral width
-      imag = ymin + (ymax - ymin) * fromIntegral y / fromIntegral height
-      z0 = real :+ imag
-      iter = julia c z0 maxIter
-      in fromIntegral (255 * iter `div` maxIter)
-
-main :: IO ()
-main = savePngImage "julia.png" (ImageY8 $ juliaSet (0.27015 :+ (-0.7)) (-1.5) 1.5 (-1.5) 1.5 800 800 256)
+	file, _ := os.Create("sierpinski.png")
+	defer file.Close()
+	png.Encode(file, img)
+}
 ----
 
 === Conclusion
@@ -260,7 +197,6 @@ For more information on fractals and programming, check out the following resour
 
 * https://en.wikipedia.org/wiki/Mandelbrot_set[Mandelbrot Set - Wikipedia]
 * https://en.wikipedia.org/wiki/Sierpinski_triangle[Sierpinski Triangle - Wikipedia]
-* https://en.wikipedia.org/wiki/Julia_set[Julia Set - Wikipedia]
 
 === References
 
@@ -271,6 +207,5 @@ For more information on fractals and programming, check out the following resour
 
 ==== Image and Code Credits
 
-* Mandelbrot Set: Code adapted from various fractal tutorials in Elixir, BQN, and Haskell.
-* Sierpinski Triangle: Code adapted from various fractal tutorials in Elixir, BQN, and Haskell.
-* Julia Set: Code adapted from various fractal tutorials in Elixir, BQN, and Haskell.
+* Mandelbrot Set: Code adapted from various fractal tutorials in Elixir and Go.
+* Sierpinski Triangle: Code adapted from various fractal tutorials in Elixir and Go.
