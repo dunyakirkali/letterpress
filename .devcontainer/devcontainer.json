@@ -1,9 +1,10 @@
 {
-  "image": "uwebarthel/asciidoctor:1.72",
+  "image": "asciidoctor/docker-asciidoctor:latest",
   "customizations": {
     "vscode": {
       "extensions": [
-        "asciidoctor.asciidoctor-vscode"
+        "asciidoctor.asciidoctor-vscode",
+        "ms-vscode.makefile-tools"
       ]
     }
   }
