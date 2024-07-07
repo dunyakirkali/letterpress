@@ -58,3 +58,15 @@ In order to remove the generated files you can run:
 ```bash
 make clean
 ```
+
+## Structure
+
+The entry point of the book is [book.adoc](source/book.adoc).
+
+The [book.adoc](source/book.adoc) consists of 3 sections:
+
+- The [front matter](source/front_matter.adoc)
+- The [body](source/body.adoc)
+- The [back matter](source/back_matter.adoc)
+
+The [body](source/body.adoc) is where should be placing the main content of your book.
