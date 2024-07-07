@@ -4,10 +4,19 @@ Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
 
+## Tools
+
+This Project makes use of the following tools:
+
+- [GNU Make](https://www.gnu.org/software/make/)
+- [Asciidoctor](https://asciidoctor.org/)
+
 ## Batteries included
 
-- Devcontainers
-- GitHub Workflows
+Everything you need to get started is included in the package
+
+- Devcontainers: Allows you to build your book locally
+- GitHub Workflows: Allows you to build your book on GitHub CI
 
 ## Bring your own
 
