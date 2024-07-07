@@ -1,0 +1,20 @@
+---
+title: Title
+subtitle: Subtitle
+wordcount: 4685
+author:
+  - Name Lastname
+publisher: My Press
+rights: © 2024 Name Lastname, CC BY-NC
+date: \today
+category: Fiction, Literature
+toc-title: Contents
+rights: |
+  © 2025 by Name Lastname
+
+  Cover image by TODO
+
+  Cover design by TODO
+
+  All rights reserved.
+...
