@@ -1,0 +1,19 @@
+[colophon]
+= Colophon
+
+This book was printed in 2024 by Seaside Press, a leading independent publisher committed to producing high-quality literature and non-fiction works. The text is set in Minion Pro, a typeface designed by Robert Slimbach in 1990, which is renowned for its elegance and readability. The headings use Avenir, a geometric sans-serif typeface created by Adrian Frutiger in 1988, chosen for its modern and clean aesthetic.
+
+The paper is 80gsm Munken Pure, known for its smooth texture and excellent opacity, sourced from sustainable forests certified by the Forest Stewardship Council (FSC). The cover is printed on 300gsm Invercote G, an environmentally friendly, high-quality paperboard that provides durability and a luxurious feel.
+
+The book was bound using the traditional Smyth sewing technique, ensuring a robust and flexible spine that allows the book to lay flat when open. The cover design was crafted by acclaimed graphic artist Jane Doe, whose work has been featured in numerous literary publications.
+
+The production team would like to acknowledge the invaluable contributions of the following individuals:
+
+- **John Smith**, Senior Editor
+- **Emily Johnson**, Copy Editor
+- **Michael Lee**, Layout Designer
+- **Sarah Brown**, Production Manager
+
+This edition was printed and bound in the United States. Seaside Press is dedicated to environmentally responsible publishing practices and uses vegetable-based inks and recycled materials whenever possible.
+
+For more information about our publications, please visit our website at www.seasidepress.com.

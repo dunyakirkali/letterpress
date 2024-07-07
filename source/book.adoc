@@ -1,5 +1,5 @@
 = Title
-Name Lastname <name.lastname@foo.bar>
+Alexandra Thompson <name.lastname@foo.bar>
 :reproducible:
 :listing-caption: Listing
 :source-highlighter: rouge
