@@ -9,6 +9,7 @@ Alexandra Thompson <name.lastname@foo.bar>
 :partnums:
 :icons: font
 :front-image: backgrounds/cover.png
+:back-image: backgrounds/back-cover.png
 :imagesdir: ../figures
 
 include::front_matter.adoc[]
