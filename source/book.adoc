@@ -1,16 +1,37 @@
 = Title
-Alexandra Thompson <name.lastname@foo.bar>
-:reproducible:
-:listing-caption: Listing
-:source-highlighter: rouge
-:toc:
-:toclevels: 2
-:doctype: book
-:partnums:
-:icons: font
-:front-image: backgrounds/cover.png
+:author: Alexandra Thompson
 :back-image: backgrounds/back-cover.png
+:copyright: 2024 Alexandra Thompson
+:creator: {author}
+:description: HTML meta tag content for description
+:doctype: book
+:email: alexandra@thompson.com
+:front-image: backgrounds/cover.png
+:icons: font
 :imagesdir: ../figures
+:keywords: HTML meta tag content for keywords
+:leveloffset: +0
+:listing-caption: Listing
+:partnums:
+:pdf-fontsdir: {docdir}/../fonts
+:pdf-theme: ld-theme_compass.yml
+:pdf-themesdir: {docdir}/../themes
+:pdfmark: true
+:pygments-linenums-mode: table
+:pygments-style: vs
+:reproducible:
+:revdate: 11.05.2024
+:revnumber: v1.0
+:revremark: Pre-release
+:sectlinks:
+:sectnums:
+:source-highlighter: pygments
+:source-highlighter: rouge
+:source-language: elixir
+:toc-title: Table of Contents
+:toc: left
+:toclevels: 2
+:xrefstyle: short
 
 include::front_matter.adoc[]
 
