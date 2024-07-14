@@ -1,5 +1,7 @@
 # Fonts
 
+asciidoctor supports TTF fonts.
+
 ## What to pick
 
 ### Serif vs Sans-Serif
@@ -29,4 +31,19 @@ Traditionally books use a font size between 10 and 12 for the body and 48 and ab
 
 ## Some ideas
 
-- 
+### OpenMoji
+
+[Openmoji](https://openmoji.org/): Open source emojis for designers, developers and everyone else!
+[Repository](https://github.com/hfg-gmuend/openmoji)
+
+### Barlow
+
+[Repository](https://github.com/jpt/barlow)
+
+### Cartograph
+
+[Cartograph](https://connary.com/cartograph.html)
+
+### Atkinson Hyperlegible
+
+[Atkinson Hyperlegible](https://brailleinstitute.org/freefont)
