@@ -1,5 +1,7 @@
 # letterpress
 
+![version](https://img.shields.io/badge/version-1.0.1-blue)
+
 Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
