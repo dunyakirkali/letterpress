@@ -47,3 +47,15 @@ Traditionally books use a font size between 10 and 12 for the body and 48 and ab
 ### Atkinson Hyperlegible
 
 [Atkinson Hyperlegible](https://brailleinstitute.org/freefont)
+
+### Source Code Pro
+
+[Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+
+### Inter
+
+[Inter](https://rsms.me/inter/download/)
+
+### M+ Fonts
+
+[M+ Fonts](https://mplusfonts.github.io/)

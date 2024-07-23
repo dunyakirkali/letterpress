@@ -6,7 +6,9 @@ Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
 
-Letterpress is a project aimed at simplifying the self-publishing process for books. It provides a ready-to-use template based on AsciiDoctor, catering to authors who need robust support for diagramming, coding examples, and mathematical formulas.
+Letterpress is a project aimed at simplifying the self-publishing process for books.
+
+It provides a ready-to-use template based on AsciiDoctor, catering to authors who need robust support for diagramming, coding examples, and mathematical formulas.
 
 ## Contributing
 
@@ -25,6 +27,8 @@ Everything you need to get started is included in the package
 
 - Devcontainers: Allows you to build your book locally
 - GitHub Workflows: Allows you to build your book on GitHub CI
+- Front matter and Back matter setup
+- PDF and EPUB output
 
 ## Bring your own
 
