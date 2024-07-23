@@ -1,6 +1,6 @@
 # letterpress
 
-![version](https://img.shields.io/badge/version-1.0.1-blue)
+![version](https://img.shields.io/badge/version-0.1.1-blue)
 
 Gutenberg the 💩 out of it!
 
