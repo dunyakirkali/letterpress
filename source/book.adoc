@@ -5,6 +5,7 @@
 :creator: {author}
 :description: HTML meta tag content for description
 :doctype: book
+:media: prepress
 :email: alexandra@thompson.com
 :front-image: backgrounds/cover.png
 :icons: font
@@ -17,15 +18,13 @@
 :pdf-theme: ld-theme_compass.yml
 :pdf-themesdir: {docdir}/../themes
 :pdfmark: true
-:pygments-linenums-mode: table
-:pygments-style: vs
+:rouge-style: gruvbox
 :reproducible:
 :revdate: 11.05.2024
 :revnumber: v1.0
 :revremark: Pre-release
 :sectlinks:
 :sectnums:
-:source-highlighter: pygments
 :source-highlighter: rouge
 :source-language: elixir
 :toc-title: Table of Contents
