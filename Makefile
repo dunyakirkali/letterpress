@@ -15,17 +15,23 @@ ASCIIDOC_FLAGS = \
 
 all: $(PDF_PATH) $(EPUB_PATH)
 
-$(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
+$(PDF_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
 	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+		-r asciidoctor-mathematical \
+		-r asciidoctor-kroki \
+		-a allow-uri-read \
+		--safe-mode server
 
-$(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
+$(EPUB_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
 	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+		-r asciidoctor-mathematical \
+		-r asciidoctor-kroki \
+		-a allow-uri-read \
+		--safe-mode server
 
 count:
 	wc -w source/*

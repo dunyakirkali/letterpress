@@ -11,6 +11,9 @@ Alexandra Thompson <name.lastname@foo.bar>
 :front-image: backgrounds/cover.png
 :back-image: backgrounds/back-cover.png
 :imagesdir: figures
+:kroki-server-url: https://kroki.io
+:kroki-fetch-diagram:
+:kroki-data-uri:
 
 include::source/front_matter.adoc[]
 
