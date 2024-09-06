@@ -16,13 +16,13 @@ ASCIIDOC_FLAGS = \
 all: $(PDF_PATH) $(EPUB_PATH)
 
 $(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-pdf source/book.adoc $(ASCIIDOC_FLAGS) \
+	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
 		-r asciidoctor-mathematical
 
 $(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-epub3 source/book.adoc $(ASCIIDOC_FLAGS) \
+	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
 		-r asciidoctor-mathematical

@@ -67,9 +67,9 @@ make clean
 
 ## Structure
 
-The entry point of the book is [book.adoc](source/book.adoc).
+The entry point of the book is [book.adoc](book.adoc).
 
-The [book.adoc](source/book.adoc) consists of 3 sections:
+The [book.adoc](book.adoc) consists of 3 sections:
 
 - The [front matter](source/front_matter.adoc)
 - The [body](source/body.adoc)

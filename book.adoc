@@ -10,10 +10,10 @@ Alexandra Thompson <name.lastname@foo.bar>
 :icons: font
 :front-image: backgrounds/cover.png
 :back-image: backgrounds/back-cover.png
-:imagesdir: ../figures
+:imagesdir: figures
 
-include::front_matter.adoc[]
+include::source/front_matter.adoc[]
 
-include::body.adoc[]
+include::source/body.adoc[]
 
-include::back_matter.adoc[]
+include::source/back_matter.adoc[]
