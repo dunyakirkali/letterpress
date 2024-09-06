@@ -5,17 +5,15 @@ ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 FIGURES = $(shell find . -name '*.svg')
 
 PDF_NAME := book.pdf
-PDF_PATH := output/$(PDF_NAME)
 
 EPUB_NAME := book.epub
-EPUB_PATH := output/$(EPUB_NAME)
 
 ASCIIDOC_FLAGS = \
   --doctype book
 
-all: $(PDF_PATH) $(EPUB_PATH)
+all: $(PDF_NAME) $(EPUB_NAME)
 
-$(PDF_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
+$(PDF_NAME): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml
 	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
@@ -24,7 +22,7 @@ $(PDF_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | out
 		-a allow-uri-read \
 		--safe-mode server
 
-$(EPUB_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
+$(EPUB_NAME): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml
 	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) \
 		-o $@ \
 		-r asciidoctor-diagram \
@@ -36,8 +34,5 @@ $(EPUB_PATH): book.adoc $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | ou
 count:
 	wc -w source/*
 
-output:
-	mkdir output
-
 clean:
-	rm -vrf output
+	rm -vrf $(PDF_NAME) $(EPUB_NAME)
