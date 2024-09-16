@@ -1,4 +1,4 @@
-name: Statistics
+name: Continuous Integration
 
 on:
   push:
@@ -14,3 +14,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Count words
         run: make count
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Vale
+        uses: errata-ai/vale-action@reviewdog
