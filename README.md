@@ -1,5 +1,8 @@
 # letterpress
 
+![CI](https://github.com/dunyakirkali/letterpress/actions/workflows/continuous_integration.yaml/badge.svg)
+![CD](https://github.com/dunyakirkali/letterpress/actions/workflows/continuous_delivery.yaml/badge.svg)
+
 Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
