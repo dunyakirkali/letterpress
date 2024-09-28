@@ -28,10 +28,10 @@ The ocean is divided into several zones, each with its unique characteristics an
 | The midnight zone, extending from 1,000 meters to 4,000 meters. It is pitch dark, with some bioluminescent organisms.
 
 | Abyssopelagic
-| This zone ranges from 4,000 meters to 6,000 meters. It is near freezing, with very high pressure and no natural light.
+| This zone ranges from 4,000 meters to 6,000 meters. It is near freezing, with high pressure and no natural light.
 
 | Hadalpelagic
-| The trenches and deep valleys, deeper than 6,000 meters. Very few creatures can survive in these extreme conditions.
+| The trenches and deep valleys, deeper than 6,000 meters. Few creatures can survive in these extreme conditions.
 |===
 
 === Marine Life Adaptations
