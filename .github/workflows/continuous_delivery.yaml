@@ -7,7 +7,7 @@ jobs:
   pdf:
     runs-on: ubuntu-latest
     container:
-      image: uwebarthel/asciidoctor
+      image: asciidoctor/docker-asciidoctor
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
   epub:
     runs-on: ubuntu-latest
     container:
-      image: uwebarthel/asciidoctor
+      image: asciidoctor/docker-asciidoctor
     steps:
       - name: Checkout
         uses: actions/checkout@v4
