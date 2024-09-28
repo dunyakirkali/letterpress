@@ -1,5 +1,8 @@
 # letterpress
 
+![CI](https://github.com/dunyakirkali/letterpress/actions/workflows/continuous_integration.yaml/badge.svg)
+![CD](https://github.com/dunyakirkali/letterpress/actions/workflows/continuous_delivery.yaml/badge.svg)
+
 Gutenberg the 💩 out of it!
 
 <img src="figures/gutenberg.jpg" width=530>
@@ -63,6 +66,14 @@ In order to remove the generated files you can run:
 
 ```bash
 make clean
+```
+
+### Linting
+
+letterpress comes with [vale](https://vale.sh/). Once you've installed vale on your machine you can run it with:
+
+```bash
+make lint
 ```
 
 ## Structure
