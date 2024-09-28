@@ -35,3 +35,6 @@ output:
 
 clean:
 	rm -vrf output
+
+lint:
+	vale source/

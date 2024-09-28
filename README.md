@@ -68,6 +68,14 @@ In order to remove the generated files you can run:
 make clean
 ```
 
+### Linting
+
+letterpress comes with [vale](https://vale.sh/). Once you've installed vale on your machine you can run it with:
+
+```bash
+make lint
+```
+
 ## Structure
 
 The entry point of the book is [book.adoc](book.adoc).
