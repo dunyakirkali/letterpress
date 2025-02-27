@@ -17,6 +17,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Asciidoctor
+        run: sudo apt-get install -y asciidoctor
       - name: Checkout
         uses: actions/checkout@v4
       - name: Vale
