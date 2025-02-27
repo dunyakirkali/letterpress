@@ -4,7 +4,8 @@
     "vscode": {
       "extensions": [
         "asciidoctor.asciidoctor-vscode",
-        "ms-vscode.makefile-tools"
+        "ms-vscode.makefile-tools",
+        "chrischinchilla.vale-vscode"
       ]
     }
   }
