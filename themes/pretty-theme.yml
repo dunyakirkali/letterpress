@@ -1,0 +1,101 @@
+font:
+  catalog:
+    Noto Serif:
+      normal: GEM_FONTS_DIR/notoserif-regular-subset.ttf
+      bold: GEM_FONTS_DIR/notoserif-bold-subset.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notoserif-bold_italic-subset.ttf
+    M+ 1mn:
+      normal: GEM_FONTS_DIR/mplus1mn-regular-subset.ttf
+      bold: GEM_FONTS_DIR/mplus1mn-bold-subset.ttf
+      italic: GEM_FONTS_DIR/mplus1mn-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-subset.ttf
+    M+ 1p Fallback:
+      normal: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      bold: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      italic: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+    Ubuntu:
+      normal: fonts/ubuntu/Ubuntu-Regular.ttf
+      bold: fonts/ubuntu/Ubuntu-Bold.ttf
+      italic: fonts/ubuntu/Ubuntu-Italic.ttf
+      bold_italic: fonts/ubuntu/Ubuntu-BoldItalic.ttf
+  fallbacks:
+    - M+ 1p Fallback
+title_page:
+  align: left
+page:
+  layout: portrait
+  margin: [0.75in, 1in, 0.75in, 1in]
+  size: A4
+base:
+  font_size: 10
+  font_color: #343a40
+  line_height_length: 12
+  line_height: $base_line_height_length / $base_font_size
+#  font_family: Noto Serif
+  font_family: Ubuntu
+code:
+  font_size: $base_font_size * 0.8
+  font_family: M+ 1mn
+conum:
+  font_family: M+ 1mn
+  font_color: $base_font_color
+  font_size: $base_font_size
+  line_height: 4 / 3
+literal:
+  font_color: #fa5252
+  font_family: M+ 1mn
+vertical_rhythm: $base_line_height_length
+heading:
+  font_color: #343a40
+  font_size: 28
+  font_style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_rhythm
+heading_h2:
+  font_color: #f03e3e
+heading_h3:
+  font_color: #1c7cd6
+link:
+  font_color: #228ae6
+table:
+  head_font_color: #f8f9fa
+  head_background_color: #495057
+outline_list:
+  indent: $base_font_size * 1.5
+header:
+  height: 0.75in
+  line_height: 1
+  recto_content:
+    center: '{document-title}'
+  verso_content:
+    center: '{document-title}'
+footer:
+  height: 0.75in
+  line_height: 1
+  recto_content:
+    left: 'Document écrit par le BUILD'
+    right: '| *{page-number}*'
+  verso_content:
+    left: '*{page-number}* |'
+    right: 'Document écrit par le BUILD'
+image:
+  align: center
+caption:
+  align: left
+#  font_color: #aea79f
+  font_color: #6e675e
+  font_size: $base_font_size
+admonition:
+  icon:
+    important:
+      stroke_color: #fa5252
+    warning:
+      stroke_color: #fd7e14
+    note:
+      stroke_color: #228ae6
+    tip:
+      stroke_color: #ffe066
+    caution:
+      stroke_color: #fd7e14

@@ -1,0 +1,75 @@
+# letterpress PDF theme — overrides on top of asciidoctor-pdf default.
+# Full reference: https://docs.asciidoctor.org/pdf-converter/latest/theme/
+extends: default
+
+font:
+  catalog:
+    merge: true
+    Noto Sans:
+      normal: GEM_FONTS_DIR/notosans-regular-subset.ttf
+      bold: GEM_FONTS_DIR/notosans-bold-subset.ttf
+      italic: GEM_FONTS_DIR/notosans-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notosans-bold_italic-subset.ttf
+
+page:
+  size: A5
+  margin: [0.6in, 0.6in, 0.75in, 0.6in]   # top, right, bottom, left
+
+base:
+  font-family: Noto Serif
+  font-size: 10.5
+  line-height: 1.5
+  text-align: justify
+
+heading:
+  font-family: Noto Sans
+  font-color: '#1a1a1a'
+  font-style: bold
+  line-height: 1.2
+  margin-top: 12
+  margin-bottom: 6
+
+heading-h1:
+  font-size: 26
+heading-h2:
+  font-size: 20
+heading-h3:
+  font-size: 16
+heading-h4:
+  font-size: 13
+
+link:
+  font-color: '#2156a5'
+
+code:
+  font-family: M+ 1mn
+  font-size: 9.5
+  background-color: '#f5f5f5'
+  border-radius: 3
+  padding: [3, 4, 3, 4]
+
+codespan:
+  font-family: $code-font-family
+  font-color: '#b58900'
+
+footer:
+  font-size: 9
+  font-color: '#666666'
+  height: 0.5in
+  recto:
+    right:
+      content: '{page-number}'
+  verso:
+    left:
+      content: '{page-number}'
+
+header:
+  height: 0.5in
+  font-size: 9
+  font-color: '#888888'
+  recto:
+    right:
+      content: '{document-title}'
+  verso:
+    left:
+      content: '{chapter-title}'

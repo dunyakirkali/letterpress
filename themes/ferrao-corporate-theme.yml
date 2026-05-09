@@ -1,0 +1,52 @@
+title_page:
+  logo_image: image:logo.png[]
+page:
+  layout: portrait
+  margin: [3.2cm, 2cm, 2.2cm, 2cm]
+  size: A4
+base:
+  font_color: #333333
+  font_family: Helvetica
+  font_size: 12
+  line_height_length: 17
+  line_height: $base_line_height_length / $base_font_size
+vertical_rhythm: $base_line_height_length
+heading:
+  font_size: 17
+  font_style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_rhythm
+link:
+  font_color: #002FA7
+outline_list:
+  indent: $base_font_size * 1.5
+header:
+  border_style: solid
+  border_color: #B4B4B4
+  border_width: 1
+  height: 2.5cm
+  vertical_align: middle
+  font-color: #5D5D5D
+  image_vertical_align: 2
+  recto_content:
+    left: |
+      *{document-title}* +
+      {document-subtitle}
+    right: image:logo.png[width=120]
+  verso_content:
+    left: |
+      *{document-title}* +
+      {document-subtitle}
+    right: image:logo.png[width=120]
+footer:
+  font-color: #5D5D5D
+  height: 2.5cm
+  line_height: 1.2
+  recto_content:
+    left: © Evil Coorp
+    right: |
+      {page-number}
+  verso_content:
+    left: © Evil Coorp
+    right: |
+      {page-number}

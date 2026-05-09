@@ -1,0 +1,215 @@
+#NOTE: File is identical to "watermark-theme.yml" except for additional background-image on title-page for watermark.
+#If you update this file, please update watermark-theme too. Thank you!
+# title page style
+extends: default
+title-page:
+  # background-image: image:header2x.png[]
+  # background-color: E7F6FB
+  logo:
+    image: image:header2x.png[pdfwidth=120%]
+    top: -14%
+    align: center
+  align: left
+  title:
+    top: 6%
+    font:
+      top: 1in
+      size: 48
+      family: Noto Sans
+      style: bold
+      color: #1B3461
+  subtitle:
+    margin-top: 10
+    font-size: 18
+    line-height: 1.1
+    color: #1B3461
+  authors:
+    margin-top: 70
+    font:
+      size: 12
+      family: Noto Sans
+      style: bold
+      color: #C5832E
+  revision:
+    font-color: #4B4B4B
+    style: normal
+page:
+  size: Letter
+  layout: portrait
+  margin: [1.2in, 0.75in, 1.2in, 0.75in]
+base:
+  align: left
+  font-size: 11
+  font-color: 000000
+  font-family: Noto Sans
+  line-height-length: 16
+  line-height: $base-line-height-length / $base-font-size
+vertical-rhythm: $base-line-height-length
+prose:
+  margin-top: 0
+  margin-bottom: 12
+link:
+  font-color: #0074A2
+  text-decoration: underline
+heading:
+  h1:
+    font-color: #1B3461
+    font-size: 30
+    font-style: bold
+  h2:
+    font-color: #1B3461
+    font-size: 24
+    font-style: normal
+  h3:
+    font-color: #1B3461
+    font-size: 24
+    font-style: normal
+  h4:
+    font-color: #1B3461
+    font-style: normal
+    font-size: 18
+  h5:
+    font-color: #1B3461
+    font-size: 14
+    font-style: bold
+  h6:
+    font-color: #1B3461
+    font-size: 9
+    font-style: bold
+  h7:
+    font-color: #646464
+    font-size: 9
+    font-style: normal
+code:
+  background-color: #FAFAFA
+  border-color: #F2F2F2
+  font-family: M+ 1mn
+  font-size: 10
+  line-height: 1.1
+  padding: 24
+literal:
+  background-color: #f9f2f4
+  border-color: #F2F2F2
+  font-color: #c7254e
+  font-family: M+ 1mn
+  font-size: 10
+  line-height: 1.1
+thematic-break:
+  border-color: #bebebe
+  border-style: dashed
+  border-width: 0.5
+  margin-top: 25
+  margin-bottom: 40
+ulist:
+  marker:
+    font-size: 10
+    font-color: 000000
+    disc:
+      content: "•"
+description-list:
+  term-font-style: bold
+  term-spacing: 0
+  description-indent: 25
+outline-list:
+  indent: 25
+  item-spacing: 0
+abstract:
+  font-color: #4597CB
+  font-size: 9
+  font-style: Bold
+  title:
+    align: left
+    font-color: #4597CB
+    font-size: 12
+    font-style: bold
+header:
+  height: 1.5in
+  font-color: #bebebe
+  font-size: 7
+  line-height: 1
+  recto:
+    center:
+      content: '{document-title}'
+  verso:
+    center:
+      content: '{document-title}'
+table:
+  background-color: #ffffff
+  border-color: #bebebe
+  border-width: 0.25
+  caption-side: top
+  font-size: 9
+  grid-color: #F2F2F2
+  head:
+    font-size: 12
+    font-style: bold
+    background-color: #4597CB
+    font-color: #ffffff
+  foot:
+    background-color: #4597CB
+    font-color: #ffffff
+  body:
+    background-color: #FFFFFF
+    stripe-background-color: #FAFAFA
+  cell:
+    padding: 7
+toc:
+  dot-leader:
+    font-color: #bebebe
+  line-height: 2
+  h2:
+    font-color: #003B49
+    font-size: 12
+    font-style: bold
+  h3:
+    font-color: #4597CB
+    font-size: 9
+    font-style: bold
+  h4:
+    font-color: #4b4b4b
+    font-size: 9
+    font-style: normal
+footer:
+  border-color: #ffffff
+  height: 1.1in
+  font-color: #bebebe
+  font-size: 7
+  line-height: 1
+  recto-left-content: '© 2014-2020 Confluent, Inc. '
+  recto-right-content: '*{page-number}*'
+  recto-center-content: 'Confluent Confidential Information. Prepared for {customer}'
+  verso-left-content: '© 2014-2020 Confluent, Inc. '
+  verso-right-content: '*{page-number}*'
+  verso-center-content: 'Confluent Confidential Information. Prepared for {customer}'
+image:
+  align: center
+caption:
+  align: left
+  font-size: $base-font-size * 0.95
+  font-style: italic
+conum:
+  glyphs: circled
+sidebar:
+# padding: [12, 5, 25, 5]
+  background-color: #FAFAFA
+  border-color: #F2F2F2
+#  background-color: #ffffee
+#  border-color: #bbbbbb
+font:
+  catalog:
+    Noto Sans:
+      normal: GEM_FONTS_DIR/notosans-regular-subset.ttf
+      italic: GEM_FONTS_DIR/notosans-italic-subset.ttf
+      bold: GEM_FONTS_DIR/notosans-bold-subset.ttf
+      bold-italic: GEM_FONTS_DIR/notosans-bold_italic-subset.ttf
+    Noto Serif:
+      normal: GEM_FONTS_DIR/notoserif-regular-subset.ttf
+      bold: GEM_FONTS_DIR/notoserif-bold-subset.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notoserif-bold_italic-subset.ttf
+    M+ 1mn:
+      normal: GEM_FONTS_DIR/mplus1mn-regular-subset.ttf
+      bold: GEM_FONTS_DIR/mplus1mn-bold-subset.ttf
+      italic: GEM_FONTS_DIR/mplus1mn-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-subset.ttf
+  fallbacks: [M+ 1mn]

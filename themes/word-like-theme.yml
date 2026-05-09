@@ -1,0 +1,28 @@
+extends: default
+image:
+  align: center
+caption:
+  align: center
+page:
+  layout: portrait
+  margin: [2.5cm, 2.5cm, 2cm, 2.5cm]
+heading:
+  font-color: #2f5496
+  h1-margin-page-top: 5cm
+  h1-margin-bottom: 5cm
+  # h1 is used for part titles (book doctype) or the doctitle (article doctype)
+  h1_font_size: floor($base_font_size * 2.6)
+  # h2 is used for chapter titles (book doctype only)
+  h2_font_size: floor($base_font_size * 1.5)
+  h3_font_size: floor($base_font_size * 1.25)
+  h4_font_size: $base_font_size_large
+  h5_font_size: $base_font_size
+  h6_font_size: $base_font_size_small
+header:
+  height: 2.5cm
+  recto:
+    right:
+      content: 'image::./logo.png[width="200"]'
+  verso:
+    left:
+      content: $header-recto-right-content

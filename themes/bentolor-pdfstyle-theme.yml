@@ -1,0 +1,146 @@
+extends: default
+
+# load fonts
+font:
+  catalog:
+    merge: true
+    Cormorant:
+      normal:             fonts/cormorant/Cormorant-Regular.ttf
+      bold:               fonts/cormorant/Cormorant-Bold.ttf
+      italic:             fonts/cormorant/Cormorant-Italic.ttf
+      bold_italic:        fonts/cormorant/Cormorant-BoldItalic.ttf
+      light:              fonts/cormorant/Cormorant-Light.ttf
+      light_italic:       fonts/cormorant/Cormorant-LightItalic.ttf
+      medium:             fonts/cormorant/Cormorant-Medium.ttf
+      medium_italic:      fonts/cormorant/Cormorant-MediumItalic.ttf
+      semibold:           fonts/cormorant/Cormorant-SemiBold.ttf
+      semibold_italic:    fonts/cormorant/Cormorant-SemiBoldItalic.ttf
+      sc_normal:          fonts/cormorant/CormorantSC-Regular.ttf
+      sc_bold:            fonts/cormorant/CormorantSC-Bold.ttf
+      sc_light:           fonts/cormorant/CormorantSC-Light.ttf
+      sc_medium:          fonts/cormorant/CormorantSC-Medium.ttf
+      sc_semibold:        fonts/cormorant/CormorantSC-SemiBold.ttf
+
+base:
+  font:
+    family: Cormorant
+    color: '445555'    # general gray font
+base_font_size: 11
+base_font_size_large: $base_font_size * 1.20
+base_font_size_small: $base_font_size * 0.82
+
+heading:
+  text_align: left
+  font_color: '0066AA'    # Chapter titles
+  font_style: sc_light
+  h1:
+    font_size: floor($base_font_size * 2.6)
+  h2:
+    font_size: round($base_font_size * 2.0)
+  h3:
+    font_size: round($base_font_size * 1.6)
+    font_style: sc_normal
+  h4:
+    font_size: $base_font_size_large
+    font_color: '000000'
+    font_style: sc_semibold
+  h5:
+    font_color: '000000'
+    font_size: $base_font_size
+    font_style: sc_bold
+  h6:
+    font_color: '000000'
+    font_size: $base_font_size_small
+    font_style: sc_bold
+
+#header layout
+header:
+  pages: +title,+toc
+  height: $base_line_height_length * 3.5
+  line_height: 1
+  padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: bottom
+  vertical_padding: 1
+  border_color: 0099CC    # bottom line
+  recto:
+    columns: <25% =50% >25%
+    left_content:   '{document-subtitle}'
+    center_content: '{document-title}'
+    right_content:  '{firstname} {lastname}'
+  verso:
+    columns: $header_recto_columns
+    left_content:   $header_recto_left_content
+    center_content: $header_recto_center_content
+    right_content:  $header_recto_right_content
+
+# footer layout
+footer:
+  height: $base_line_height_length * 3.5
+  line_height: 1
+  padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: top
+  border_color: $header_border_color
+  recto:
+    columns: <25% =50% >25%
+    left_content:   'version {revnumber}'
+    center_content: 'page {page-number} of {page-count}'
+    right_content:  '{classification}'
+  verso:
+    columns: $footer_recto_columns
+    left_content:   $footer_recto_left_content
+    center_content: $footer_recto_center_content
+    right_content:  $footer_recto_right_content
+
+title_page:
+  authors:
+    font_color: $base_font_color
+  revision:
+    font_color: $base_font_color
+  subtitle:
+    font-style: normal
+
+table:
+  head:
+    font_color: $heading_font_color
+    background_color: eeeeee
+
+page:
+  layout: portrait
+  margin: [2.5cm, 2.8cm, 2cm, 2cm]
+  size: A4
+
+role:
+#  navy:
+#    font_color: 001f3f
+#  blue:
+#    font_color: 0074D9
+#  aqua:
+#    font_color: 7FDBFF
+#  teal:
+#    font_color: 39CCCC
+#  olive:
+#    font_color: 3D9970
+#  green:
+#    font_color: 2ECC40
+#  lime:
+#    font_color: 01FF70
+#  yellow:
+#    font_color: FFDC00
+#  orange:
+#    font_color: FF851B
+#  red:
+#    font_color: FF4136
+#  maroon:
+#    font_color: 85144b
+#  fuchsia:
+#    font_color: F012BE
+#  purple:
+#    font_color: B10DC9
+  black:
+    font_color: 333333
+  gray:
+    font_color: AAAAAA
+  silver:
+    font_color: DDDDDD
+  white:
+    font_color: FFFFFF

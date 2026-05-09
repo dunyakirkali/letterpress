@@ -27,6 +27,32 @@ Everything you need to get started is included in the package
 - Devcontainers: Allows you to build your book locally
 - GitHub Workflows: Allows you to build your book on GitHub CI
 
+## Local build on macOS
+
+> ⚠️ The instructions below are **macOS-only** (tested on Apple Silicon, Sequoia 15.x). Linux/Windows users should use the devcontainer or the `asciidoctor/docker-asciidoctor` image directly.
+
+### One-shot setup
+
+```bash
+make setup-macos
+```
+
+Installs Ruby 3.3, the required gems (via `bundle install` from the included `Gemfile`), and system dependencies (PlantUML, Mermaid + headless Chrome, cairo/pango/cmake/bison/flex).
+
+### Building
+
+```bash
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+make output/book.pdf
+```
+
+### Gotchas
+
+- **Don't use brew's default `ruby` formula (4.x).** asciidoctor-pdf 2.3.x depends on stdlib gems (`bigdecimal`, `ostruct`, ...) removed in Ruby 4.0. Use `ruby@3.3`.
+- **RVM users:** RVM hijacks `gem` and `ruby` via shell functions / env vars. Always invoke commands with `env -u GEM_HOME -u GEM_PATH -u RUBY_VERSION -u rvm_path` to bypass.
+- **CMake 4.x + `mathematical` 1.6.20:** Native build fails because the bundled `mtex2MML/CMakeLists.txt` requires CMake < 3.5 syntax. The `setup-macos` target sets `CMAKE_POLICY_VERSION_MINIMUM=3.5` to work around this.
+- **Mermaid Chrome version pinning:** `npx puppeteer browsers install` fetches the *latest* Chrome — but `mermaid-cli` pins a specific version. Use mermaid-cli's bundled puppeteer (`node_modules/puppeteer/install.mjs`); the `setup-macos` target does this.
+
 ## Bring your own
 
 - Content
