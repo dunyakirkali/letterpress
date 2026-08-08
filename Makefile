@@ -13,6 +13,8 @@ EPUB_PATH := output/$(EPUB_NAME)
 ASCIIDOC_FLAGS = \
   --doctype book
 
+.PHONY: all count clean lint epubcheck
+
 all: $(PDF_PATH) $(EPUB_PATH)
 
 $(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
@@ -29,6 +31,9 @@ $(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
 
 count:
 	wc -w source/*
+
+epubcheck: $(EPUB_PATH)
+	epubcheck $(EPUB_PATH)
 
 output:
 	mkdir output
