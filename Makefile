@@ -1,5 +1,9 @@
 SOURCE_FOLDER := source
 
+SHELL := /bin/bash
+
+.PHONY: all count clean lint
+
 ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 
 FIGURES = $(shell find . -name '*.svg')
@@ -28,7 +32,14 @@ $(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
 		-r asciidoctor-mathematical
 
 count:
-	wc -w source/*
+	@dir="$(SOURCE_FOLDER)"; \
+	total=0; \
+	while read -r file; do \
+		words=$$(wc -w < "$$file"); \
+		total=$$((total + words)); \
+		printf "%6d %s\n" "$$words" "$$file"; \
+	done < <(find "$$dir" -type f -name "*.adoc" | sort); \
+	printf "%6d total\n" "$$total"
 
 output:
 	mkdir output
