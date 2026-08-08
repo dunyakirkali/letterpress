@@ -37,8 +37,8 @@ Everything you need to get started is included in the package
 ## Development environment
 
 Letterpress ships a [Nix flake](flake.nix) that pins the entire toolchain
-(Asciidoctor, asciidoctor-pdf/epub3/diagram/mathematical, PlantUML, Graphviz,
-a JRE, Vale and EPUBCheck). This is the same environment used in CI, so builds
+(Asciidoctor, asciidoctor-pdf/epub3/diagram/mathematical, PlantUML, Mermaid,
+Graphviz, a JRE, Vale and EPUBCheck). This is the same environment used in CI, so builds
 are reproducible everywhere.
 
 ### Enter the dev shell

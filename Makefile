@@ -13,7 +13,8 @@ EPUB_NAME := book.epub
 EPUB_PATH := output/$(EPUB_NAME)
 
 ASCIIDOC_FLAGS = \
-  --doctype book
+  --doctype book \
+  --failure-level ERROR
 
 .PHONY: all count clean lint epubcheck
 

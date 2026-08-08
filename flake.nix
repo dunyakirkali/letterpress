@@ -31,12 +31,13 @@
         };
 
         # Everything needed to render the book: the gem env plus the external
-        # binaries asciidoctor-diagram shells out to (plantuml -> java + graphviz).
+        # binaries asciidoctor-diagram shells out to.
         runtimeInputs = with pkgs; [
           gems
           gems.wrappedRuby
           gnumake
           plantuml
+          mermaid-cli
           graphviz
           jre
           vale
@@ -48,6 +49,7 @@
           version = "0.1.0";
           src = ./.;
           nativeBuildInputs = runtimeInputs;
+          DIAGRAM_PLANTUML_CLASSPATH = "${pkgs.plantuml}/lib/plantuml.jar";
           # asciidoctor-diagram caches into $HOME
           buildPhase = ''
             export HOME=$TMPDIR
@@ -68,6 +70,7 @@
 
         devShells.default = pkgs.mkShell {
           packages = runtimeInputs ++ (with pkgs; [ bundix ]);
+          DIAGRAM_PLANTUML_CLASSPATH = "${pkgs.plantuml}/lib/plantuml.jar";
           shellHook = ''
             echo "letterpress dev shell"
             echo "  make            build PDF + EPUB"
