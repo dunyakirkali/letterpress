@@ -60,6 +60,16 @@ make output/book.epub
 make count
 ```
 
+### Validate EPUB
+
+letterpress can validate the generated EPUB with [EPUBCheck](https://www.w3.org/publishing/epubcheck/). Once you've installed EPUBCheck on your machine you can run it with:
+
+```bash
+make epubcheck
+```
+
+This builds the EPUB (if needed) and then validates it.
+
 ### Clean
 
 In order to remove the generated files you can run:
