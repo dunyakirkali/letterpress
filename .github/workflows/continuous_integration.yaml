@@ -12,17 +12,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
       - name: Count words
-        run: make count
+        run: nix develop --command make count
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Asciidoctor
-        run: sudo apt-get install -y asciidoctor
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
       - name: Vale
-        uses: errata-ai/vale-action@reviewdog
-        with:
-          files: source/
-          fail_on_error: true
+        run: nix develop --command make lint
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
+      - name: Build book (PDF + EPUB)
+        run: nix build .#book -L
+      - name: Validate EPUB
+        run: nix develop --command epubcheck result/book.epub

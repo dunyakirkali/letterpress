@@ -1,8 +1,6 @@
 SOURCE_FOLDER := source
 
-SHELL := /bin/bash
-
-.PHONY: all count clean lint
+SHELL := bash
 
 ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 

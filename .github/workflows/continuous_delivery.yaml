@@ -4,32 +4,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  pdf:
+  build:
     runs-on: ubuntu-latest
-    container:
-      image: asciidoctor/docker-asciidoctor
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Generate PDF
-        run: make output/book.pdf
+      - name: Install Nix
+        uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
+      - name: Build book (PDF + EPUB)
+        run: nix build .#book -L
       - name: Archive PDF
         uses: actions/upload-artifact@v4
         with:
           name: pdf
-          path: output/book.pdf
-  epub:
-    runs-on: ubuntu-latest
-    container:
-      image: asciidoctor/docker-asciidoctor
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Generate EPUB
-        run: make output/book.epub
+          path: result/book.pdf
       - name: Archive EPUB
         uses: actions/upload-artifact@v4
         with:
           name: epub
-          path: output/book.epub
-
+          path: result/book.epub

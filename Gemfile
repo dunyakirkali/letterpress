@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "asciidoctor"
+gem "asciidoctor-pdf"
+gem "asciidoctor-epub3"
+gem "asciidoctor-diagram"
+gem "asciidoctor-mathematical"
+gem "rouge"
+gem "coderay"
+gem "pygments.rb"
