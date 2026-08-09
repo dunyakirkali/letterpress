@@ -44,16 +44,25 @@
           epubcheck
         ];
 
+        # Nixpkgs' mermaid-cli only bundles Chromium on Linux.
+        mermaidBrowserExecutable = pkgs.lib.optionalString (system == "aarch64-darwin")
+          "${pkgs.playwright-driver.components.chromium-headless-shell}/chrome-headless-shell-mac-arm64/chrome-headless-shell";
+        # Chromium's sandbox cannot nest inside the Nix build sandbox.
+        mermaidPuppeteerConfig = pkgs.writeText "puppeteer.json" ''
+          { "args": ["--no-sandbox"] }
+        '';
+
         book = pkgs.stdenv.mkDerivation {
           pname = "letterpress-book";
           version = "0.1.0";
           src = ./.;
           nativeBuildInputs = runtimeInputs;
           DIAGRAM_PLANTUML_CLASSPATH = "${pkgs.plantuml}/lib/plantuml.jar";
+          PUPPETEER_EXECUTABLE_PATH = mermaidBrowserExecutable;
           # asciidoctor-diagram caches into $HOME
           buildPhase = ''
             export HOME=$TMPDIR
-            make all
+            make all ASCIIDOC_FLAGS="--doctype book --failure-level ERROR -a mermaid-puppeteer-config=${mermaidPuppeteerConfig}"
           '';
           installPhase = ''
             mkdir -p $out
@@ -71,6 +80,7 @@
         devShells.default = pkgs.mkShell {
           packages = runtimeInputs ++ (with pkgs; [ bundix ]);
           DIAGRAM_PLANTUML_CLASSPATH = "${pkgs.plantuml}/lib/plantuml.jar";
+          PUPPETEER_EXECUTABLE_PATH = mermaidBrowserExecutable;
           shellHook = ''
             echo "letterpress dev shell"
             echo "  make            build PDF + EPUB"
