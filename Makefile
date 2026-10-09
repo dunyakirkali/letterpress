@@ -2,11 +2,9 @@ SOURCE_FOLDER := source
 
 SHELL := /bin/bash
 
-.PHONY: all count clean lint
-
 ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 
-FIGURES = $(shell find . -name '*.svg')
+FIGURES := $(wildcard figures/*)
 
 PDF_NAME := book.pdf
 PDF_PATH := output/$(PDF_NAME)
@@ -14,24 +12,19 @@ PDF_PATH := output/$(PDF_NAME)
 EPUB_NAME := book.epub
 EPUB_PATH := output/$(EPUB_NAME)
 
-ASCIIDOC_FLAGS = \
-  --doctype book
+ASCIIDOC_FLAGS := \
+  -r asciidoctor-diagram \
+  -r asciidoctor-mathematical
 
 .PHONY: all count clean lint epubcheck
 
 all: $(PDF_PATH) $(EPUB_PATH)
 
-$(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) \
-		-o $@ \
-		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+$(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile | output
+	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) -o $@
 
-$(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) \
-		-o $@ \
-		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+$(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile | output
+	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) -o $@
 
 count:
 	@dir="$(SOURCE_FOLDER)"; \
