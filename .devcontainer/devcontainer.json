@@ -1,5 +1,5 @@
 {
-  "image": "asciidoctor/docker-asciidoctor:latest",
+  "image": "asciidoctor/docker-asciidoctor:1.108",
   "customizations": {
     "vscode": {
       "extensions": [
