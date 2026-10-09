@@ -33,6 +33,7 @@ Everything you need to get started is included in the package
 
 - Content
 - Images
+- Cover images: `backgrounds/cover.png` and `backgrounds/back-cover.png` (referenced from [book.adoc](book.adoc); the build works without them, but the book has no cover)
 
 ## Development environment
 
@@ -134,4 +135,4 @@ The [book.adoc](book.adoc) consists of 3 sections:
 - The [body](source/body.adoc)
 - The [back matter](source/back_matter.adoc)
 
-The [body](source/body.adoc) is where should be placing the main content of your book.
+The [body](source/body.adoc) is where you should place the main content of your book.

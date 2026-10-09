@@ -1,3 +1,5 @@
+// Sample chapters: replace or delete these includes and add your own.
+
 include::chapter1.adoc[]
 
 include::chapter2.adoc[]
