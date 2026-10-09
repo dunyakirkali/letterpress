@@ -91,6 +91,16 @@ If you just need to generate the EPUB:
 make output/book.epub
 ```
 
+### Update gems
+
+Gems are pinned in `Gemfile.lock`, and the Nix build reads them from `gemset.nix`. After changing `Gemfile` or `Gemfile.lock` (including Dependabot bumps), regenerate it inside the dev shell and commit the result:
+
+```bash
+make gemset
+```
+
+CI fails if `gemset.nix` doesn't match `Gemfile.lock`.
+
 ### Count
 
 ```bash

@@ -20,7 +20,7 @@ ASCIIDOC_FLAGS := \
   --failure-level ERROR \
   $(EXTRA_ASCIIDOC_FLAGS)
 
-.PHONY: all count clean lint epubcheck
+.PHONY: all count clean lint epubcheck gemset
 
 all: $(PDF_PATH) $(EPUB_PATH)
 
@@ -45,6 +45,12 @@ epubcheck: $(EPUB_PATH)
 
 output:
 	mkdir output
+
+# Regenerate gemset.nix (used by the Nix gem environment) from Gemfile.lock.
+# bundix reuses hashes already in gemset.nix, so start from scratch.
+gemset:
+	rm -f gemset.nix
+	bundix
 
 clean:
 	rm -vrf output
