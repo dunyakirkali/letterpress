@@ -1,6 +1,6 @@
 SOURCE_FOLDER := source
 
-SHELL := /bin/bash
+SHELL := bash
 
 ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 
@@ -12,9 +12,13 @@ PDF_PATH := output/$(PDF_NAME)
 EPUB_NAME := book.epub
 EPUB_PATH := output/$(EPUB_NAME)
 
+# EXTRA_ASCIIDOC_FLAGS lets callers (e.g. the Nix build) add attributes
+# without clobbering the required extensions.
 ASCIIDOC_FLAGS := \
   -r asciidoctor-diagram \
-  -r asciidoctor-mathematical
+  -r asciidoctor-mathematical \
+  --failure-level ERROR \
+  $(EXTRA_ASCIIDOC_FLAGS)
 
 .PHONY: all count clean lint epubcheck
 

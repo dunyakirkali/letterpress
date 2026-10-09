@@ -1,11 +1,19 @@
 {
-  "image": "asciidoctor/docker-asciidoctor:1.108",
+  "image": "nixpkgs/devcontainer@sha256:423dabf2e17c6710bf9bb6160bf1c63be33c73672d31c884dcc47238f42f4eba",
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "extraNixConfig": "experimental-features = nix-command flakes"
+    }
+  },
+  "onCreateCommand": "nix develop --command true",
   "customizations": {
     "vscode": {
       "extensions": [
         "asciidoctor.asciidoctor-vscode",
         "ms-vscode.makefile-tools",
-        "chrischinchilla.vale-vscode"
+        "chrischinchilla.vale-vscode",
+        "jnoortheen.nix-ide",
+        "mkhl.direnv"
       ]
     }
   }

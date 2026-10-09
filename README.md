@@ -17,6 +17,7 @@ Contributions to Letterpress are welcome! If you have suggestions, improvements,
 
 This Project makes use of the following tools:
 
+- [Nix](https://nixos.org/) (flakes) for reproducible builds and dev environments
 - [GNU Make](https://www.gnu.org/software/make/)
 - [Asciidoctor](https://asciidoctor.org/)
 
@@ -24,6 +25,7 @@ This Project makes use of the following tools:
 
 Everything you need to get started is included in the package
 
+- Nix flake: Reproducible toolchain for local dev and CI/CD
 - Devcontainers: Allows you to build your book locally
 - GitHub Workflows: Allows you to build your book on GitHub CI
 
@@ -32,7 +34,41 @@ Everything you need to get started is included in the package
 - Content
 - Images
 
+## Development environment
+
+Letterpress ships a [Nix flake](flake.nix) that pins the entire toolchain
+(Asciidoctor, asciidoctor-pdf/epub3/diagram/mathematical, PlantUML, Mermaid,
+Graphviz, a JRE, Vale and EPUBCheck). This is the same environment used in CI, so builds
+are reproducible everywhere.
+
+### Enter the dev shell
+
+```bash
+nix develop
+```
+
+This drops you into a shell with every tool on `PATH`, so all the `make`
+commands below just work. If you use [direnv](https://direnv.net/), run
+`direnv allow` once and the environment loads automatically.
+
+### Build the book with Nix
+
+You can build the book directly, without entering a shell, and get a `result`
+symlink containing `book.pdf` and `book.epub`:
+
+```bash
+nix build            # builds both PDF and EPUB into ./result
+ls result/
+```
+
+Under the hood this runs the same `make` targets described below inside the
+pinned environment.
+
 ## Commands
+
+The `make` commands below assume the toolchain is available. The easiest way to
+get it is the Nix dev shell (`nix develop`); alternatively install the tools
+yourself.
 
 ### Generate
 
@@ -62,7 +98,7 @@ make count
 
 ### Validate EPUB
 
-letterpress can validate the generated EPUB with [EPUBCheck](https://www.w3.org/publishing/epubcheck/). Once you've installed EPUBCheck on your machine you can run it with:
+Letterpress can validate the generated EPUB with [EPUBCheck](https://www.w3.org/publishing/epubcheck/). EPUBCheck is provided by the Nix dev shell (or install it yourself), then run:
 
 ```bash
 make epubcheck
@@ -80,7 +116,7 @@ make clean
 
 ### Linting
 
-letterpress comes with [vale](https://vale.sh/). Once you've installed vale on your machine you can run it with:
+Letterpress comes with [vale](https://vale.sh/). Vale is provided by the Nix dev shell (or install it yourself), then run:
 
 ```bash
 make lint
