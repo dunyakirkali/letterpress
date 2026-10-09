@@ -62,7 +62,7 @@
           # asciidoctor-diagram caches into $HOME
           buildPhase = ''
             export HOME=$TMPDIR
-            make all ASCIIDOC_FLAGS="--doctype book --failure-level ERROR -a mermaid-puppeteer-config=${mermaidPuppeteerConfig}"
+            make all EXTRA_ASCIIDOC_FLAGS="-a mermaid-puppeteer-config=${mermaidPuppeteerConfig}"
           '';
           installPhase = ''
             mkdir -p $out

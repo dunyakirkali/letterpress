@@ -4,7 +4,7 @@ SHELL := bash
 
 ASCIIDOC_FILES := $(wildcard $(SOURCE_FOLDER)/*.adoc)
 
-FIGURES = $(shell find . -name '*.svg')
+FIGURES := $(wildcard figures/*)
 
 PDF_NAME := book.pdf
 PDF_PATH := output/$(PDF_NAME)
@@ -12,25 +12,23 @@ PDF_PATH := output/$(PDF_NAME)
 EPUB_NAME := book.epub
 EPUB_PATH := output/$(EPUB_NAME)
 
-ASCIIDOC_FLAGS = \
-  --doctype book \
-  --failure-level ERROR
+# EXTRA_ASCIIDOC_FLAGS lets callers (e.g. the Nix build) add attributes
+# without clobbering the required extensions.
+ASCIIDOC_FLAGS := \
+  -r asciidoctor-diagram \
+  -r asciidoctor-mathematical \
+  --failure-level ERROR \
+  $(EXTRA_ASCIIDOC_FLAGS)
 
 .PHONY: all count clean lint epubcheck
 
 all: $(PDF_PATH) $(EPUB_PATH)
 
-$(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) \
-		-o $@ \
-		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+$(PDF_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile | output
+	asciidoctor-pdf book.adoc $(ASCIIDOC_FLAGS) -o $@
 
-$(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile metadata.yaml | output
-	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) \
-		-o $@ \
-		-r asciidoctor-diagram \
-		-r asciidoctor-mathematical
+$(EPUB_PATH): $(ASCIIDOC_FILES) $(FIGURES) Makefile | output
+	asciidoctor-epub3 book.adoc $(ASCIIDOC_FLAGS) -o $@
 
 count:
 	@dir="$(SOURCE_FOLDER)"; \

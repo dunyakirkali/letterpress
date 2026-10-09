@@ -1,6 +1,8 @@
 = Title
 Alexandra Thompson <name.lastname@foo.bar>
 :reproducible:
+:publisher: My Press
+:copyright: © 2025 Alexandra Thompson, CC BY-NC
 :listing-caption: Listing
 :source-highlighter: rouge
 :toc:
