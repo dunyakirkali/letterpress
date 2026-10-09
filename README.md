@@ -70,6 +70,17 @@ make epubcheck
 
 This builds the EPUB (if needed) and then validates it.
 
+### Nix
+
+If you use [Nix](https://nixos.org/) with flakes enabled, you don't need to install anything else by hand:
+
+```bash
+nix develop
+make
+```
+
+The dev shell provides asciidoctor (with the PDF, EPUB, diagram and mathematical extensions), PlantUML, Mermaid, Graphviz, EPUBCheck and vale. Mermaid diagrams need Chrome; on macOS the shell uses your installed Google Chrome. After changing `nix/Gemfile`, run `bundle lock` and `bundix` inside `nix/` (with `BUNDLE_FORCE_RUBY_PLATFORM=true`) to refresh `Gemfile.lock` and `gemset.nix`.
+
 ### Clean
 
 In order to remove the generated files you can run:
