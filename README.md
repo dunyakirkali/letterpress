@@ -122,6 +122,8 @@ Letterpress comes with [vale](https://vale.sh/). Vale is provided by the Nix dev
 make lint
 ```
 
+The style rules (Google, proselint, write-good, Readability) are committed under `.github/styles`, so no `vale sync` is needed. Only errors fail the lint. To see the softer warnings and suggestions, run `vale --minAlertLevel=warning source/`.
+
 ## Structure
 
 The entry point of the book is [book.adoc](book.adoc).
