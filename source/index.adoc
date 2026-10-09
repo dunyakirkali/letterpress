@@ -1,2 +1,4 @@
+// Filled in automatically from the ((term)) entries in the text.
+
 [index]
 == Index

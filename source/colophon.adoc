@@ -1,3 +1,5 @@
+// Sample text: replace with your own.
+
 [colophon]
 = Colophon
 
