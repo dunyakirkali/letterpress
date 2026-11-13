@@ -224,10 +224,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1d9safb4dly6qmc2g06444l0zifby52yy6j1a5fa1g4j3ihm3jah";
+      sha256 = "00wf7j0mbv1qvj1yd1s5pivxplphvgwqwba1j4qs0bz3zc6q7zyp";
       type = "gem";
     };
-    version = "1.19.4";
+    version = "1.19.5";
   };
   pdf-core = {
     groups = ["default"];
